@@ -7,7 +7,7 @@ GIT_URL=$2
 mkdir -p ${APP_PATH}
 
 # Load the modules
-module load gcc python java fftw/3.3.6-pl1
+module load gcc python java fftw
 
 # Create a virtual environment
 virtualenv ${APP_PATH}/venv
@@ -19,8 +19,8 @@ source ${APP_PATH}/venv/bin/activate
 pip install -q -U pip
 
 # Set CFLAGS and LDFLAGS
-export CFLAGS="-I/n/app/fftw/3.3.6_pl1/include"
-export LDFLAGS="-L/n/app/fftw/3.3.6_pl1/lib/"
+export CFLAGS="-I${C_INCLUDE_PATH}"
+export LDFLAGS="-L${LD_LIBRARY_PATH}"
 
 # Install numpy and scipy up-front
 pip install -q -U numpy
