@@ -9,7 +9,7 @@ local fullVersion = myModuleVersion()
 load("gcc")
 load(atleast("python", "2.7"))
 load("java")
-load("fftw/3.3.6-pl1-multiple_precision")
+load("fftw/3.3.6-pl1")
 append_path("PATH", pathJoin(base, fullVersion, "/venv/bin/"))
 
 whatis("Name: ".. pkgName)
