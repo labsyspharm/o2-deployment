@@ -2,14 +2,12 @@
 
 APP_PATH=$1
 GIT_URL=$2
-MINICONDA_URL=$3
-CONDA_PATH=${1}/miniconda2
 
 # Create the directory
 mkdir -p ${APP_PATH}
 
 # Load the modules
-module load gcc python java fftw/3.3.6-pl1-multiple_precision
+module load gcc python java fftw/3.3.6-pl1
 
 # Create a virtual environment
 virtualenv ${APP_PATH}/venv
@@ -17,9 +15,12 @@ virtualenv ${APP_PATH}/venv
 # Activate the virtual environment
 source ${APP_PATH}/venv/bin/activate
 
+# Upgrade pip
+pip install -q -U pip
+
 # Set CFLAGS and LDFLAGS
-export CFLAGS="$CFLAGS -I/n/app/fftw/3.3.6_pl1-multiple_precision/include/"
-export LDFLAGS="$LDFLAGS -L/n/app/fftw/3.3.6_pl1-multiple_precision/lib/"
+export CFLAGS="-I/n/app/fftw/3.3.6_pl1/include"
+export LDFLAGS="-L/n/app/fftw/3.3.6_pl1/lib/"
 
 # Install numpy and scipy up-front
 pip install -q -U numpy
