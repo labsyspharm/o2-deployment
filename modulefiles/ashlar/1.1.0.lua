@@ -12,6 +12,11 @@ load("java")
 load("fftw")
 append_path("PATH", pathJoin(base, fullVersion, "/venv/bin/"))
 
+-- Environment change - assume single threaded.
+if (mode() == "load" and os.getenv("OMP_NUM_THREADS") == nil) then
+  setenv("OMP_NUM_THREADS","1")
+end
+
 whatis("Name: ".. pkgName)
 whatis("Version: " .. fullVersion)
 whatis("Category: tools")
