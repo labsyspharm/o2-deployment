@@ -40,8 +40,8 @@ images and then generate pyramids as an OME-tiff, ready for import to OMERO.
 # Load the ashlar and stitcher modules
 module load ashlar stitcher
 
-# Use mosaic to stitch and register the images in the given `scan_path`.
-mosaic <scan_path> [--ffc <flat_field_path>]
+# Use ashlar to stitch and register the images in the given `scan_path`.
+ashlar <scan_path> [--ffp <flat_field_path>]
 
 # Create pyramids for the given `./scan*` directory and output as
 # `dataset-name`.tif, merging the channels into one file.
