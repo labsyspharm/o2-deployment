@@ -22,9 +22,8 @@ pip install -q -U pip
 export CFLAGS="-I${C_INCLUDE_PATH}"
 export LDFLAGS="-L${LD_LIBRARY_PATH}"
 
-# Install numpy and scipy up-front
-pip install -q -U numpy
-pip install -q -U scipy
+# Install cython up-front
+pip install -q -U cython
 
 # Install ASHLAR
 pip install -q -U ${GIT_URL}
