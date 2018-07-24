@@ -18,12 +18,11 @@ source ${APP_PATH}/venv/bin/activate
 # Upgrade pip
 pip install -q -U pip
 
-# Set CFLAGS and LDFLAGS
-export CFLAGS="-I${C_INCLUDE_PATH}"
-export LDFLAGS="-L${LD_LIBRARY_PATH}"
-
 # Install cython up-front
 pip install -q -U cython
+
+# Install numpy manually to avoid warnings from potential binary incompatability
+pip install -q -I "numpy>=1.14,<1.15"
 
 # Install ASHLAR
 pip install -q -U ${GIT_URL}
