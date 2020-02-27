@@ -9,7 +9,7 @@ Several additional modules for O2 are available.
 * omero-scripts
 
 
-## Install Instructions
+## Usage Instructions
 
 Making use of these modules requires adding the path to the custom modules to
 your `MODULEPATH` on O2. This can be accomplished easily by adding the following
